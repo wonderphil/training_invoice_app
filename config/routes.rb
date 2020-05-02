@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   mount Rswag::Api::Engine => '/api-docs'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 
-  namespace :v1 do
+  namespace :v1, defaults: { format: :json } do
     resources :contacts
     resource :sessions, only: [:create, :destroy]
   end
