@@ -1,0 +1,22 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  host: <%= ENV["DB_HOST"] %>
+  username: <%= ENV["DB_USER"] %>
+  password: <%= Rails.application.credentials[Rails.env.to_sym][:database][:pass] %>
+  database: <%= ENV["DB_DATABASE"] %>_<%= Rails.env.downcase %>
+  port: 5432
+  
+development:
+  <<: *default
+  
+ 
+staging:
+  <<: *default
+  
+test:
+  <<: *default
+  
+production:
+  <<: *default
