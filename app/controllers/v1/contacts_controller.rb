@@ -1,20 +1,20 @@
 # Contacts controller
 class V1::ContactsController < ApplicationController
   def index
-    @contacts = Contact.all
+    @contacts = current_user.contacts
 
     render :index, status: :ok
   end
 
   def create
-    @contact = Contact.new(contact_params)
+    @contact = current_user.build(contact_params)
     @contact.save
     render :create, status: :created
   end
 
   def destroy
-    @contact = Contact.where(id: params[:id]).first
-    
+    @contact = current_user.contact.where(id: params[:id]).first
+
     if @contact.destroy
       head(:ok)
     else
