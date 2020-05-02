@@ -16,6 +16,7 @@ gem 'rswag'                                         # Rswag extends rspec-rails 
 gem 'rack-cors'                                     # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
 gem 'devise'
 gem 'simple_token_authentication', '~> 1.0'
+gem 'friendly_id', '~> 5.2.4'                       # FriendlyId is the “Swiss Army bulldozer” of slugging and permalink plugins for ActiveRecord
 # gem 'sidekiq', '~> 5.1'                             # Use Sidekiq as a background job processor through Active Job
 # gem 'clockwork', '~> 2.0'                           # Use Clockwork for recurring background tasks without needing cron
 # gem "attr_encrypted", "~> 3.0.0"                    # Encrypt fields in the DB https://github.com/attr-encrypted/attr_encrypted
