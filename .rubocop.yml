@@ -1,0 +1,7 @@
+AllCops:
+  EnabledByDefault: true
+  Exclude:
+    - 'db/**/*'
+    - 'config/**/*'
+    - 'script/**/*'
+    - 'bin/{rails,rake}'
