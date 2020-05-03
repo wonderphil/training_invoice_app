@@ -5,3 +5,28 @@ AllCops:
     - 'config/**/*'
     - 'script/**/*'
     - 'bin/{rails,rake}'
+    - './docs/*'
+    - './bin/*'
+    - './config/initializers/devise-security.rb'
+
+Layout/LineLength:
+  Max: 160
+Metrics/BlockLength:
+  Max: 50
+Metrics/MethodLength:
+  Max: 40
+Metrics/AbcSize:
+  Max: 50
+
+Layout/SpaceInsideArrayLiteralBrackets:
+  Enabled: false
+
+Style/SymbolArray:
+  Enabled: false
+Style/WordArray:
+  Enabled: false
+Style/NumericLiterals:
+  Enabled: false
+
+Style/Copyright: 
+  Enabled: false
