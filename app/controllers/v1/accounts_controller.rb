@@ -1,15 +1,20 @@
-module V1
-  class AccountsController < ApplicationController
-    def create
-      @account = current_user.accounts.build(account_params)
+# frozen_string_literal: true
 
-      if @user.save
-        render :create, status: :created
+module V1
+  # Accounts controller
+  class AccountsController < ApplicationController
+    # Creates Accounts
+    def create
+      account = current_user.accounts.build(account_params)
+
+      if account.save
+        render :create, status: :created, locals: { account: account }
       else
         head(:unprocessable_entity)
       end
     end
 
+    # Updates Accounts
     def update
       @account = current_user.accounts.friendly.find(params[:id])
 
@@ -18,14 +23,12 @@ module V1
       else
         head(:unprocessable_entity)
       end
-  
     end
 
     private
 
     def account_params
-      params.require(:user).permit(:name, :address, :vat_rate, :tax_payer_id, :default_currency)
+      params.require(:account).permit(:name, :address, :vat_rate, :tax_payer_id, :default_currency)
     end
-
   end
 end
