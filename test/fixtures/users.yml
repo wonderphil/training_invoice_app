@@ -1,0 +1,4 @@
+one:
+  email: 'user@somewhere.com'
+  authentication_token: 'blah1234tewst'
+  confirmed_at: <%= Time.now %>

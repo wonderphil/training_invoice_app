@@ -16,7 +16,14 @@ staging:
   <<: *default
   
 test:
-  <<: *default
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+  host: localhost
+  username: rails_test
+  password: rails_test
+  database: training_test
+  port: 5432
   
 production:
   <<: *default

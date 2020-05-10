@@ -18,7 +18,16 @@ Metrics/MethodLength:
 Metrics/AbcSize:
   Max: 50
 
+Bundler/GemComment:
+  Enabled: false
+
 Layout/SpaceInsideArrayLiteralBrackets:
+  Enabled: false
+
+Style/MethodCallWithArgsParentheses:
+  Enabled: false
+
+Style/InlineComment:
   Enabled: false
 
 Style/SymbolArray:

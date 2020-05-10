@@ -2,6 +2,8 @@
 #   Accepted values: debug, info, warn, error, fatal, or unknown
 LOG_LEVEL=debug
 
+RUBYOPT='-W:no-deprecated'
+
 # Options for unicorn
 WORKER_PROCESSES=1
 LISTEN_ON=0.0.0.0:8080
