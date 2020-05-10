@@ -4,5 +4,5 @@ json.call(
   :first_name,
   :last_name,
   :email,
-  :user_id
+  :organization_id
 )

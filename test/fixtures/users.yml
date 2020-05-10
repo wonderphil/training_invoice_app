@@ -1,4 +1,9 @@
-one:
-  email: 'user@somewhere.com'
-  authentication_token: 'blah1234tewst'
+user_one:
+  email: <%= Faker::Internet.email %>
+  authentication_token: 'test1234blah'
+  confirmed_at: <%= Time.now %>
+
+user_two:
+  email: <%= Faker::Internet.email %>
+  authentication_token: 'blah1234test'
   confirmed_at: <%= Time.now %>

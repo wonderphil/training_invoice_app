@@ -1,0 +1,11 @@
+contact_one:
+  first_name: <%= Faker::Name.name %>
+  last_name: <%= Faker::Name.name %>
+  email: <%= Faker::Internet.email %>
+  organization: org_one
+
+contact_two:
+  first_name: <%= Faker::Name.name %>
+  last_name: <%= Faker::Name.name %>
+  email: <%= Faker::Internet.email %>
+  organization: org_two

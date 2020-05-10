@@ -1,0 +1,13 @@
+org_one:
+  name: <%= Faker::Company.name %>
+  address: <%= Faker::Address.street_name %>
+  tax_payer_number: <%= Faker::Company.ein %>
+  slug: 'org_1'
+  account: account_one
+
+org_two:
+  name: <%= Faker::Company.name %>
+  address: <%= Faker::Address.street_name %>
+  tax_payer_number: <%= Faker::Company.ein %>
+  slug: 'org_2'
+  account: account_two

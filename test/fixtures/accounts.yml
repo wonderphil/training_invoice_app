@@ -1,0 +1,17 @@
+account_one:
+  name: <%= Faker::Company.name %>
+  slug: 'company-one'
+  address: <%= Faker::Address.street_name %>
+  vat_rate: 7.8
+  tax_payer_id: <%= Faker::Company.ein %>
+  default_currency: <%= Faker::Currency.code %>
+  owner: user_one
+
+account_two:
+  name: <%= Faker::Company.name %>
+  slug: 'company-two'
+  address: <%= Faker::Address.street_name %>
+  vat_rate: 7.8
+  tax_payer_id: <%= Faker::Company.ein %>
+  default_currency: <%= Faker::Currency.code %>
+  owner: user_two

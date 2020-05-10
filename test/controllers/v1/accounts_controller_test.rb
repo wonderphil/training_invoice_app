@@ -5,7 +5,7 @@ require 'test_helper'
 module V1
   class AccountsControllerTest < ActionDispatch::IntegrationTest
     setup do
-      user = users(:one)
+      user = users(:user_one)
 
       @header = {
         'X-User-Email': user.email,
