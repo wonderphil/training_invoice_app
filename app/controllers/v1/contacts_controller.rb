@@ -39,11 +39,6 @@ module V1
       params.require(:contact).permit(:first_name, :last_name, :email)
     end
 
-    def current_account
-      @current_account ||=
-        Account.friendly.find(params[:account_id])
-    end
-
     def current_organization
       @current_organization ||=
         current_account.organizations.find(params[:organization_id])
