@@ -3,6 +3,13 @@
 module V1
   # Accounts controller
   class AccountsController < ApplicationController
+    
+    def index
+      accounts = current_user.accounts
+
+      render :index, locals: { accounts: accounts }
+    end
+
     # Creates Accounts
     def create
       account = current_user.accounts.build(account_params)
