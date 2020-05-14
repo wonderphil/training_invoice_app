@@ -35,6 +35,10 @@ module V1
 
     private
 
+    def current_scope
+      params[:organization_id] ? current_organization : current_account
+    end
+
     def contact_params
       params.require(:contact).permit(:first_name, :last_name, :email)
     end
