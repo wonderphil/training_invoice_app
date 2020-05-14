@@ -9,6 +9,7 @@ gem 'bootsnap', '>= 1.4.2', require: false          # Reduces boot times through
 gem 'devise'
 gem 'friendly_id', '~> 5.2.4'                       # FriendlyId is the “Swiss Army bulldozer” of slugging and permalink plugins for ActiveRecord
 gem 'jbuilder', '~> 2.7'                            # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
+gem 'jwt'
 gem 'pg', '>= 0.18', '< 2.0'                        # Use postgresql as the database for Active Record
 gem 'rack-cors'                                     # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
 gem 'rack-timeout', '~> 0.5'                        # Use Rack Timeout. Read more: https://github.com/heroku/rack-timeout
