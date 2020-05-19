@@ -9,7 +9,7 @@ class V1::SessionsController < ApplicationController
     if @user&.valid_password?(params[:password])
       render :create, status: :created
     else
-      head(:unauthorized)
+      render json: { error: 'invalid_credentials' }, status: :unauthorized
     end
   end
 
