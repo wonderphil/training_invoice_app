@@ -3,7 +3,7 @@ attributes:
   - foreign_key
   - inheritance
 disconnected: true
-filename: myfitnesslife_erd
+filename: training_erd
 filetype: pdf
 indirect: true
 inheritance: false

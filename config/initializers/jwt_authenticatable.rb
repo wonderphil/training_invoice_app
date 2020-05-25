@@ -1,11 +1,11 @@
 module Devise
   module Strategies
-    class JWTAuthenticatable < base
+    class JWTAuthenticatable < Base
       def authenticate!
         token = get_token
         return fail(:invalid) unless toekn.present?
 
-        payload = get_payload
+        payload = WebToken.decode(token)
         return fail(:invalid) if payload == :expired
 
         resource = mapping.to.find(payload['user_id'])
@@ -16,16 +16,6 @@ module Devise
       end
 
       private
-
-      def get_payload
-        JWT.decode(
-          get_token, 
-          Rails.application.secrets.secret_key_base, 
-          true, { algorithm: 'HS256' }
-        ).first
-      rescue JWT::ExpiredSignature
-        :expired
-      end
 
       def get_token
         auth_header.present? && auth_header.split(' ').last

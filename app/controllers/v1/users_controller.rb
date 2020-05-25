@@ -4,7 +4,7 @@ module V1
       @user = User.new(user_params)
 
       if @user.save
-        jwt = JWT.encore(
+        jwt = JWT.encode(
           { user_id: user.id, exp: (Time.now + 2.weeks).to_i },
           Rails.application.secrets.secret_key_base,
           'HS256'
