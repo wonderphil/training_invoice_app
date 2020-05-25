@@ -3,7 +3,7 @@ module Devise
     class JWTAuthenticatable < Base
       def authenticate!
         token = get_token
-        return fail(:invalid) unless toekn.present?
+        return fail(:invalid) unless token.present?
 
         payload = WebToken.decode(token)
         return fail(:invalid) if payload == :expired
@@ -12,7 +12,6 @@ module Devise
         return fail(:not_found_in_database) unless resource
 
         success! resource
-
       end
 
       private
@@ -24,7 +23,6 @@ module Devise
       def auth_header
         request.headers['Authorization']
       end
-
     end
   end
 end

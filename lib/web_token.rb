@@ -10,7 +10,7 @@ module WebToken
     # Decode JWT Token
     def decode(token)
       JWT.decode(
-        token,
+        token, 
         WebToken::SECRET,
         true,
         { algorithm: 'HS256' }
@@ -21,21 +21,16 @@ module WebToken
 
     # Encore JWT Toekn
     def encode(user)
-      JWT.encode(
-        toekn_params(user),
-        Rails.application.secrets.secret_key_base,
-        'HS256'
-      )
+      JWT.encode(token_params(user), WebToken::SECRET, 'HS256')
     end
 
     private
 
     def token_params(user)
       { 
-        user_id: user.id,
-        exp: WEBTOKEN::EXPIRY
+        user_id: user.id, 
+        exp: EXPIRY 
       }
     end
-
   end
 end

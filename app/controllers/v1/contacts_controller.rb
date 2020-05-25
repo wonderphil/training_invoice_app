@@ -1,12 +1,12 @@
 # frozen_string_literal: true
 
 module V1
-  # Contacts controller
+  # Contact endpoints
   class ContactsController < ApplicationController
     include V1::Contacts::Response
 
     def index
-      @contacts = current_account.contacts
+      @contacts = current_scope.contacts
 
       render :index, status: :ok
     end
@@ -24,7 +24,7 @@ module V1
     end
 
     def destroy
-      @contact = current_organization.contact.find(params[:id])
+      @contact = current_organization.contacts.find(params[:id])
 
       if @contact.destroy
         head(:ok)
@@ -36,7 +36,7 @@ module V1
     private
 
     def current_scope
-      params[:organization_id] ? current_organization : current_account
+      params[:organization_id].present? ? current_organization : current_account
     end
 
     def contact_params

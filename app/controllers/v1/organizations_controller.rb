@@ -6,11 +6,11 @@ module V1
     def index
       organizations = current_account.organizations
 
-      render :index, locals: {organizations: organizations }, status: :ok
+      render :index, locals: { organizations: organizations }, status: :ok
     end
 
     def show
-      organization = current_account.organization.find(params[:id])
+      organization = current_account.organizations.find(params[:id])
 
       render :show, locals: { organization: organization }, status: :ok
     end
