@@ -1,12 +1,14 @@
+require 'byebug'
 module V1
   class UsersController < ApplicationController
     def create
       @user = User.new(user_params)
-      
+      byebug
       if @user.save
         render :create
       else
-        head(:unprocessable_entity)
+        
+        render json: { error: @user.errors }, status: :unprocessable_entity
       end
     end
 
