@@ -271,7 +271,7 @@ GEM
     terminal-notifier-guard (1.6.4)
     thor (1.0.1)
     thread_safe (0.3.6)
-    tzinfo (1.2.7)
+    tzinfo (1.2.10)
       thread_safe (~> 0.1)
     unicorn (5.5.5)
       kgio (~> 2.6)
